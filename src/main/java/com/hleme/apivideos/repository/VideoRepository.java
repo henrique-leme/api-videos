@@ -1,4 +1,7 @@
 package com.hleme.apivideos.repository;
 
-public class VideoRepository {
+import com.hleme.apivideos.model.Video;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface VideoRepository extends JpaRepository<Video, Long> {
 }
