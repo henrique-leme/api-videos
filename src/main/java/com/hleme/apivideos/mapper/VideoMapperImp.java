@@ -1,5 +1,6 @@
 package com.hleme.apivideos.mapper;
 
+import com.hleme.apivideos.DTO.request.VideoRequest;
 import com.hleme.apivideos.DTO.response.VideoResponse;
 import com.hleme.apivideos.model.Video;
 import lombok.RequiredArgsConstructor;
@@ -14,5 +15,9 @@ public class VideoMapperImp implements  VideoMapper{
     @Override
     public VideoResponse toVideoResponse(Video video) {
         return mapper.map(video, VideoResponse.class);
+    }
+    @Override
+    public Video fromVideoRequest(VideoRequest videoRequest) {
+        return mapper.map(videoRequest, Video.class);
     }
 }
