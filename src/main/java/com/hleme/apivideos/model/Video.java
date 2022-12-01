@@ -5,8 +5,12 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@Builder
 @Entity
 @Table(name = "videos")
+@AllArgsConstructor
 @NoArgsConstructor
 public class Video {
 
