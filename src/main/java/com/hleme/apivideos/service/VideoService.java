@@ -8,4 +8,6 @@ public interface VideoService {
 
     Page<VideoResponse> findAll(Pageable pageable);
 
+    VideoResponse findById(long id);
+
 }
