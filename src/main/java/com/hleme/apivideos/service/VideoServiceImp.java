@@ -19,4 +19,7 @@ public class VideoServiceImp implements VideoService {
         return videoRepository.findAll(pageable)
                 .map(videoMapper::toVideoResponse);
     }
+    private Video findVideoById(long id) {
+        return videoRepository.findById(id).orElseThrow();
+    }
 }
