@@ -23,4 +23,9 @@ public class VideoController {
             pageVideoResponse = videoService.findAll(pageable);
         return ResponseEntity.ok(pageVideoResponse);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<VideoResponse> findById(@PathVariable(name = "id") long id) {
+        return ResponseEntity.ok(videoService.findById(id));
+    }
 }
