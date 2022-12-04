@@ -2,6 +2,7 @@ package com.hleme.apivideos.service;
 
 import com.hleme.apivideos.DTO.response.VideoResponse;
 import com.hleme.apivideos.mapper.VideoMapper;
+import com.hleme.apivideos.model.Video;
 import com.hleme.apivideos.repository.VideoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.*;
@@ -19,6 +20,13 @@ public class VideoServiceImp implements VideoService {
         return videoRepository.findAll(pageable)
                 .map(videoMapper::toVideoResponse);
     }
+
+    @Override
+    public VideoResponse findById(long id) {
+        return videoMapper.toVideoResponse(findVideoById(id));
+
+    }
+
     private Video findVideoById(long id) {
         return videoRepository.findById(id).orElseThrow();
     }
