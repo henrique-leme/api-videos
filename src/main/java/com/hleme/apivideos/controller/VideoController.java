@@ -1,5 +1,7 @@
 package com.hleme.apivideos.controller;
 
+import com.hleme.apivideos.DTO.request.VideoRequest;
+import com.hleme.apivideos.DTO.request.groups.CreateInfo;
 import com.hleme.apivideos.DTO.response.VideoResponse;
 import com.hleme.apivideos.service.VideoService;
 import lombok.RequiredArgsConstructor;
@@ -7,7 +9,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.net.URI;
 
 
 @RestController
@@ -33,9 +39,6 @@ public class VideoController {
     public ResponseEntity<VideoResponse> create(
             @RequestBody @Validated(CreateInfo.class) VideoRequest videoRequest, UriComponentsBuilder uriBuilder) {
 
-        if (videoRequest.getCategoryId() == null) {
-            videoRequest.setCategoryId(1);
-        }
         VideoResponse videoResponse = videoService.create(videoRequest);
         URI uri = uriBuilder.path("/videos/{id}").build(videoResponse.getId());
         return ResponseEntity.created(uri).body(videoResponse);
