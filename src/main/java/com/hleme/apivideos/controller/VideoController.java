@@ -28,4 +28,16 @@ public class VideoController {
     public ResponseEntity<VideoResponse> findById(@PathVariable(name = "id") long id) {
         return ResponseEntity.ok(videoService.findById(id));
     }
+
+    @PostMapping
+    public ResponseEntity<VideoResponse> create(
+            @RequestBody @Validated(CreateInfo.class) VideoRequest videoRequest, UriComponentsBuilder uriBuilder) {
+
+        if (videoRequest.getCategoryId() == null) {
+            videoRequest.setCategoryId(1);
+        }
+        VideoResponse videoResponse = videoService.create(videoRequest);
+        URI uri = uriBuilder.path("/videos/{id}").build(videoResponse.getId());
+        return ResponseEntity.created(uri).body(videoResponse);
+    }
 }
