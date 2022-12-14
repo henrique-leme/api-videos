@@ -1,4 +1,4 @@
-# Título do projeto
+# API de Videos
 
 Insira aqui as tecnologias utilizadas no projeto <br>
 
@@ -13,7 +13,7 @@ Insira aqui as tecnologias utilizadas no projeto <br>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
-- Status do Projeto: ✔️ ⚠️ (concluido, em desenvolvimento, em manutencao, etc)
+- Status do Projeto: ✔️ ⚠️ Em desenvolvimento
 
 Um parágrafo da descrição do projeto vai aqui
 
