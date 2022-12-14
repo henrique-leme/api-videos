@@ -15,7 +15,7 @@ Insira aqui as tecnologias utilizadas no projeto <br>
 
 - Status do Projeto: ✔️ ⚠️ Em desenvolvimento
 
-Um parágrafo da descrição do projeto vai aqui
+A APi de videos foi feita com a ideia de possibilitar o compartilhamento de videos e a organizacão de seus videos favoritos em um só local
 
 ### ⚙️ Funcionalidades
 
