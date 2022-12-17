@@ -50,4 +50,11 @@ public class VideoController {
             @RequestBody @Validated({CreateInfo.class, UpdateInfo.class}) VideoRequest videoRequest) {
         return ResponseEntity.ok(videoService.update(id, videoRequest));
     }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable(name = "id") long id) {
+        videoService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
