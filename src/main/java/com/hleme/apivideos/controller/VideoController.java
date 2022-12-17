@@ -43,4 +43,11 @@ public class VideoController {
         URI uri = uriBuilder.path("/videos/{id}").build(videoResponse.getId());
         return ResponseEntity.created(uri).body(videoResponse);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<VideoResponse> update(
+            @PathVariable(name = "id") long id,
+            @RequestBody @Validated({CreateInfo.class, UpdateInfo.class}) VideoRequest videoRequest) {
+        return ResponseEntity.ok(videoService.update(id, videoRequest));
+    }
 }
