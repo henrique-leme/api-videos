@@ -2,6 +2,7 @@ package com.hleme.apivideos.controller;
 
 import com.hleme.apivideos.DTO.request.VideoRequest;
 import com.hleme.apivideos.DTO.request.groups.CreateInfo;
+import com.hleme.apivideos.DTO.request.groups.UpdateInfo;
 import com.hleme.apivideos.DTO.response.VideoResponse;
 import com.hleme.apivideos.service.VideoService;
 import lombok.RequiredArgsConstructor;
