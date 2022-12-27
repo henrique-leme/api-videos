@@ -40,6 +40,16 @@ public class VideoServiceImp implements VideoService {
         return videoMapper.toVideoResponse(videoRepository.save(videoToBeSaved));
     }
 
+    @Override
+    public VideoResponse update(long id, VideoRequest videoRequest) {
+
+        Video videoToBeUpdated = findVideoById(id);
+
+        videoToBeUpdated = videoMapper.mergeVideo(videoRequest, videoToBeUpdated);
+
+        return videoMapper.toVideoResponse(videoRepository.save(videoToBeUpdated));
+    }
+
     private Video findVideoById(long id) {
         return videoRepository.findById(id).orElseThrow();
     }
