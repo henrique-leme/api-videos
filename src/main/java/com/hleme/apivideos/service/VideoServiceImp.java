@@ -50,6 +50,13 @@ public class VideoServiceImp implements VideoService {
         return videoMapper.toVideoResponse(videoRepository.save(videoToBeUpdated));
     }
 
+    @Override
+    public void deleteById(long id) {
+        Video video = findVideoById(id);
+        videoRepository.delete(video);
+    }
+
+
     private Video findVideoById(long id) {
         return videoRepository.findById(id).orElseThrow();
     }
