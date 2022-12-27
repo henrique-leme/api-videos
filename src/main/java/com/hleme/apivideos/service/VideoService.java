@@ -13,4 +13,6 @@ public interface VideoService {
 
     VideoResponse create(VideoRequest videoRequest);
 
+    VideoResponse update(long id, VideoRequest videoRequest);
+
 }
