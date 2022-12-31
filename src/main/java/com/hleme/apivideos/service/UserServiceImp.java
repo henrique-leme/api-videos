@@ -1,4 +1,4 @@
 package com.hleme.apivideos.service;
 
-public class UserServiceImp {
+public class UserServiceImp implements UserService{
 }
